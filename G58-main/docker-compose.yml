@@ -1,0 +1,11 @@
+services:
+  ruggine-server:
+    image: samvia/ruggine-server:v1
+    container_name: ruggine_server
+    restart: unless-stopped
+    ports:
+      - "8190:8190" 
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    user: "1000:1000"

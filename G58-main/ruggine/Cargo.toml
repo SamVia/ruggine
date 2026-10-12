@@ -1,0 +1,39 @@
+[package]
+name = "ruggine"
+version = "0.1.0"
+edition = "2021"
+
+# Server
+[[bin]]
+name = "server"
+path = "src/bin/server.rs"
+
+# Cli client
+[[bin]]
+name = "client"
+path = "src/bin/client.rs"
+
+# Gui client
+[[bin]]
+name = "gui_client"
+path = "src/bin/gui_client.rs"
+
+# Librerie
+[dependencies]
+# Gestione asincrona e Networking
+tokio = { version = "1.28", features = ["full"] }
+# Serializzazione JSON
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+# Monitoraggio Sistema (CPU)
+sysinfo = "0.29"
+# Tempo e Date (log)
+chrono = "0.4"
+# to hash the passwords
+sha2 = "0.10"
+hex = "0.4"
+
+# Interfaccia Grafica (GUI)
+eframe = "0.27" 
+# Log GUI (utile se la finestra crasha)
+env_logger = "0.10"
